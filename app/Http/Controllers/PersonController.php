@@ -25,7 +25,7 @@ class PersonController extends Controller
             $user->nationality = $country['country_id'];
         }
 
-        return view('users', compact('users'));
+        return response()->json($users);
 
     }
 

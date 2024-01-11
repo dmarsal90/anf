@@ -27,6 +27,13 @@ class PersonController extends Controller
         return view('users', compact('users'));
 
     }
+
+    public function show(Person $person)
+    {
+        return response()->json([
+            'persona' => $person
+        ], 200);
+    }
     public function store(Request $request)
     {
         $user = User::create($request->only(['nombre', 'apellidos', 'edad', 'sexo', 'correo']));
